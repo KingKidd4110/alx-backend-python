@@ -5,14 +5,12 @@ from typing import List
 from random import randint
 from itertools import repeat
 from datetime import datetime
-
-
-async def wait_random(max_delay: int = 10) -> float:
-    delay = randint(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int = 10) -> List[float]:
+    """
+    wait_n uses wait_random function
+    """
     delays = await asyncio.gather(*repeat(wait_random(max_delay), n))
     return sorted(delays)

@@ -6,15 +6,7 @@ from typing import List
 from random import randint
 from itertools import repeat
 wait_n = __import__('1-concurrent_coroutines').wait_n
-
-
-async def wait_random(max_delay: int = 10) -> float:
-    """
-    reusing the function on task 1
-    """
-    delay = randint(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def measure_time(n: int, max_delay: int) -> float:
