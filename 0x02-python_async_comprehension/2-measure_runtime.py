@@ -6,7 +6,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 async_generator = __import__('0-async_generator').async_generator
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """
     execute async_comprehension four times in parallel using asyncio.gather
     """

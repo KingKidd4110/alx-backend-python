@@ -4,7 +4,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+async def async_generator() -> None:
     """
     The coroutine takes no arguments
     loops = 10 asyncronously
