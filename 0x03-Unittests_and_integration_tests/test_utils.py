@@ -15,7 +15,6 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
-
     def test_access_nested_map(self, nested_map: Mapping,
                                path: Sequence, expected: int) -> None:
         """ Test access_nested_map class """
@@ -27,12 +26,12 @@ class TestAccessNestedMap(unittest.TestCase):
         ({}, ("a",)),
         ({"a": 1}, ("a", "b"))
     ])
-
     def test_access_nested_map_exception(self, nested_map: Mapping,
                                          path: Sequence) -> None:
         """ test exception for access nested map """
         with self.assertRaises(Exception):
             access_nested_map(nested_map, path)
+
 
 class TestGetJson(unittest.TestCase):
     """ Test get_json by mocking http calls """
@@ -47,6 +46,7 @@ class TestGetJson(unittest.TestCase):
         result = get_json(test_url)
         self.assertEqual(result, test_payload)
         moke_requests_get.assert_called_once_with(test_url)
+
 
 class TestMemoize(unittest.TestCase):
     """ Test the memoization decorator, memoize """
